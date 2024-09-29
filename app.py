@@ -65,4 +65,5 @@ def convert():
     return send_file(img_byte_arr, mimetype=f'image/{output_format}', as_attachment=True, download_name=filename)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Usar el servidor WSGI de producción
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
