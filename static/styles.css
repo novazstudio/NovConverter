@@ -1,1 +1,139 @@
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0A0A0A; /* Fondo negro */
+    color: #FFFFFF; /* Texto blanco */
+}
+
+/* Card de glassmorphism */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1); /* Fondo blanco translúcido */
+    border-radius: 15px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra más suave */
+    backdrop-filter: blur(15px);
+    padding: 40px;
+}
+
+/* Títulos y subtítulos */
+h1 {
+    font-size: 42px;
+    font-weight: 600;
+    color: #FFFFFF; /* Texto blanco */
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #FFFFFF, #CCCCCC); /* Gradiente blanco */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.8); /* Texto gris claro */
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Sección de productos */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.products h2 {
+    font-size: 28px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+/* Inputs de archivo */
+.file-label {
+    padding: 15px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    transition: background-color 0.3s;
+}
+
+.file-label:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Previsualización de imágenes */
+#preview-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#preview-container img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Borde gris claro */
+}
+
+/* Estilos de los dropdowns y inputs */
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco translúcido */
+    color: #FFFFFF; /* Texto blanco */
+    border: none;
+    border-radius: 10px;
+}
+
+/* Botón de conversión */
+.btn-primary {
+    background: linear-gradient(90deg, #FFFFFF, #CCCCCC); /* Gradiente blanco */
+    border: none;
+    color: #0A0A0A; /* Texto negro */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Sombra oscura */
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    .glass-card {
+        padding: 20px;
+    }
+  }
