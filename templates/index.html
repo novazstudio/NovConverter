@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovConverter - Ultimate Image Converter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="glass-card p-4">
+            <h1>NovConverter</h1>
+            <p class="subtitle">Your ultimate image converter</p>
+
+            <form id="image-form" action="/convert" method="POST" enctype="multipart/form-data">
+                
+                <div class="form-group">
+                    <label for="image" class="file-label btn btn-outline-light w-100">Choose Images</label>
+                    <input type="file" name="image" id="image" class="d-none" multiple required onchange="previewImages()">
+                </div>
+
+                <div id="preview-container" class="mb-3"></div>
+
+                <div class="form-group">
+                    <label for="format">Select output format:</label>
+                    <select name="format" id="format" class="form-control">
+                        <option value="png">PNG</option>
+                        <option value="jpg">JPEG</option>
+                        <option value="bmp">BMP</option>
+                        <option value="gif">GIF</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quality">Quality (1-100):</label>
+                    <input type="range" id="quality" name="quality" min="1" max="100" value="80" class="form-control-range" oninput="document.getElementById('qualityValue').innerText = this.value;">
+                    <span id="qualityValue">80</span>%
+                </div>
+
+                <div class="form-group">
+                    <label>Resize Image (optional):</label>
+                    <div class="d-flex">
+                        <input type="number" id="width" name="width" placeholder="Width" class="form-control mr-2">
+                        <input type="number" id="height" name="height" placeholder="Height" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="filter">Apply filter:</label>
+                    <select name="filter" id="filter" class="form-control">
+                        <option value="none">None</option>
+                        <option value="grayscale">Grayscale</option>
+                        <option value="sepia">Sepia</option>
+                        <option value="invert">Invert</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">✨ Convert Now</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="bg-transparent text-white text-center p-3">
+        <div class="container">
+            <p><a href="/privacy" class="text-white">Privacy Policy</a> | <a href="/about" class="text-white">About Us</a> | <a href="#contact" class="text-white">Contact</a></p>
+            <p>&copy; 2024 NovConverter. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/static/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+      </html>
